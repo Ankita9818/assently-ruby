@@ -21,6 +21,10 @@ module Assently
       post "/api/v2/createcase", signature_case_json
     end
 
+    def create_case_from_template options = {}
+      post "/api/v2/createcasefromtemplate", options.to_json
+    end
+
     def send_case id
       post "/api/v2/sendcase", JSON.pretty_generate({ id: id })
     end
