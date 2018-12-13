@@ -35,6 +35,16 @@ module Assently
       post "/api/v2/updatecase", options.to_json
     end
 
+    # Method to recall a case
+    def recall_case id
+      post "/api/v2/recallcase", JSON.pretty_generate({ id: id })
+    end
+
+    # Method to delete a case
+    def delete_case id
+      post "/api/v2/deletecase", JSON.pretty_generate({ id: id })
+    end
+
     def get_case id
       get "/api/v2/getcase", { id: id }
     end
